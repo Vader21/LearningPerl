@@ -1,6 +1,8 @@
 #/usr/bin/perl
 
 =cut
+0. sudo install build-essential
+
 1. Поставить local::lib
 	http://search.cpan.org/~apeiron/local-lib-1.008004/lib/local/lib.pm#The_bootstrapping_technique
 	Обрати внимание, что там идет по два примера, используй с путем по умолчанию "perl Makefile.PL --bootstrap" и вариант под bash. Не сделай лишнего.
@@ -13,7 +15,11 @@
 	http://search.cpan.org/~miyagawa/App-cpanminus-1.5002/lib/App/cpanminus.pm#Installing_to_local_perl_%28perlbrew%29
 
 3. Поставить модуль Task::Dancer
+	sudo install libpng12-dev libgd2-xpm-dev libjpeg62-dev libfreetype6-dev
+
 	Использовать для установки cpanminus (показать КАК) НЕ sudo вариант! наш вариант - perlbrew (local::lib)
+	!!! Обратить внимание на окончание лога установки, не случилось ли ошибки?!
+
 
 	Залить на прочтение в Киндл:
 	Введение: http://search.cpan.org/perldoc?Dancer::Introduction
