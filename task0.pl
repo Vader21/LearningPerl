@@ -32,4 +32,15 @@
 
 	Прочитать страницу мануала до тех пор, пока станет совсем непонятно.
 	
+
+0. Complete
+1. Download & unpack And than
+#perl Makefile.PL --bootstrap
+#make
+#make test
+#make install
+#echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >>~/.bashrc 
+Пока понятный МАН не нашел. в поисках
+2. 
+
 =cut
