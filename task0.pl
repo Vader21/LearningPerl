@@ -41,6 +41,14 @@
 #make install
 #echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >>~/.bashrc 
 Пока понятный МАН не нашел. в поисках
-2. 
+2. install ok
+3. поставил. работает
+4. сделал /home/ГАРМ/Projects/LearningPerl/MyApp/ через dancer -a MyApp
+запустил cd MyApp
+    bin/app.pl
+как в МАНе по сетапу.
+закончилось на 
+== Entering the development dance floor ... О_о
+
 
 =cut
