@@ -49,6 +49,8 @@
 как в МАНе по сетапу.
 закончилось на 
 == Entering the development dance floor ... О_о
-
+получил http://localhost:3000/ 
+Getting started
+Here’s. how to get dancing:
 
 =cut
