@@ -1,34 +1,30 @@
 #!/usr/bin/perl -w
 use strict;
-my @numbers;
+my @user_numbers;
 my @num_list = qw / 5 10 20 40 80 100 /;
 my @d;
 
 #приглашение в программу. выбор печати из масива или с клавиатуры.
-print "Prog 'Find Closest Number' ver.01 alpha. \n";
-print "Closest are Numbers 5, 10, 20, 40, 80, 100";
-print "Do you want to type numbers from keyboard? \n";
-print "y/n \n";
-print "You Answer: \n";
+print "Prog 'Find Closest X Coordinate' ver.01 alpha. \n";
+print "X coordinate points at: ".join(",", @num_list);
+print "Do you want to type numbers from keyboard? [y/N]: ";
 chomp($_ = <STDIN>);
 #печать с клавиатуры
 if (m/y|yes/i) {
     print "Type your numbers with Enter after each number and CNTRL+D in the end \n";
-    chomp(@numbers = <STDIN>);
-#печать с массива @numbers
+    chomp(@user_numbers = <STDIN>);
+#печать с массива @user_numbers
 } else {
-    @numbers = qw/ no numbers now /;
+    @user_numbers = qw/ 6 /;
 }
-my $index = -1;
 my $d = 0;
-foreach my $x (@numbers) {
-    foreach my $y (@num_list){
-    $index ++;
-    if ($index == 0) {
-        $d = $x - $y;
-    }
-    if (abs($x - $y) <= $d){
-        
-      }
-        } 
+foreach my $x (@user_numbers) {
+    for my $i (0..@num_list) {
+        if ($i == 0) {
+            $d = $x - $num_list[$i];
+        }
+        if (abs($x - $num_list[$i]) <= $d){
+            
+        }
+    } 
 }
