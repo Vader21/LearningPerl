@@ -1,6 +1,5 @@
  #!/usr/bin/perl -w
 use strict;
-(my $user, my $system, my $cuser, my $csystem) = times;
 my @very_cold = (
 "",
 "[Очень Холодно]Ты убил Кенни.",
@@ -59,7 +58,7 @@ print "Угадай ка ты число от 1 до 100 и получишь б�
 my $dif = 1;
 while ($dif){
 chomp(my $line = <STDIN>);
-if ($line =~ m/[0-9]/ && $line <=100 && $line >=1) {
+if (!($line =~ m/\D/) && $line <=100 && $line >=1) {
 $dif = abs($line - $rnum);
 if (($dif > 50) && ($dif < 100)) {
     my $x = int(rand($size_v_cold));
@@ -78,4 +77,3 @@ if (($dif > 50) && ($dif < 100)) {
     };
 } else {print "Насяльника, Равшана мана не понимать. Введи мана другуя буква \n"};
 } 
-print  "Ты просрал $user Секунд \n";
