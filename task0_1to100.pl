@@ -1,8 +1,8 @@
  #!/usr/bin/perl -w
 use strict;
 
-my ($sec1, $min1, $hour1, $day1) = localtime(time);
-print scalar(localtime), "\n";
+my $time_start = time;
+print $time_start, "\n";
 my @very_cold = (
 "[Очень Холодно]Ты убил Кенни.",
 "[Очень Холодно]Не трать мое время, неудачник.",
@@ -77,9 +77,7 @@ if (($dif > 50) && ($dif < 100)) {
     };
 } else {print "Насяльника, Равшана мана не понимать. Введи мана другуя буква \n"};
 }
-my ($sec2, $min2, $hour2, $day2) = localtime(time);
-print scalar(localtime), "\n";
-
-my $x = ($day2 - $day1)*24*3600 + ($hour2*3600 + $min2*60 + $sec2) - ($hour1*3600 + $min1*60 + $sec1);
-
-print "Ты просрал $x секунд \n";
+my $time_end = time;
+print $time_end, "\n";
+my $x = $time_end - $time_start;
+print "Ты просрал $x секунд(ы) \n";
