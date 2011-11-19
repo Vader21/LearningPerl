@@ -1,8 +1,7 @@
  #!/usr/bin/perl -w
 use strict;
 
-my $time_start = time;
-print $time_start, "\n";
+my $time_start = (time);
 my @very_cold = (
 "[Очень Холодно]Ты убил Кенни.",
 "[Очень Холодно]Не трать мое время, неудачник.",
@@ -77,7 +76,5 @@ if (($dif > 50) && ($dif < 100)) {
     };
 } else {print "Насяльника, Равшана мана не понимать. Введи мана другуя буква \n"};
 }
-my $time_end = time;
-print $time_end, "\n";
-my $x = $time_end - $time_start;
-print "Ты просрал $x секунд(ы) \n";
+
+print "Ты просрал ", ((time) - $time_start),  " секунд(ы) \n";
