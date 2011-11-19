@@ -1,4 +1,4 @@
-  #!/usr/bin/perl -w
+ #!/usr/bin/perl -w
 use strict;
 
 my ($sec1, $min1, $hour1, $day1) = localtime(time);
@@ -50,10 +50,6 @@ my @very_hot = (
 "[Очень Жарко]Все тёлки твои.",
 '[Очень Жарко]Человечество не останется вечно на Земле, но в погоне за светом и пространством сначала робко проникнет за пределы атмосферы, а затем завоюет себе все околосолнечное пространство. - Циолковский Константин Эдуардович.'
 );
-my $size_v_cold = @very_cold;
-my $size_cold = @cold;
-my $size_hot = @hot;
-my $size_v_hot = @very_hot;
 
 
 my $rnum = int(rand(100));
@@ -65,16 +61,16 @@ chomp(my $line = <STDIN>);
 if (!($line =~ m/\D/) && $line <=100 && $line >=1) {
 $dif = abs($line - $rnum);
 if (($dif > 50) && ($dif < 100)) {
-    my $x = int(rand($size_v_cold));
+    my $x = int(rand(scalar @very_cold));
     print $very_cold[$x], "\n";
     } elsif (($dif > 30) && ($dif <= 50)){
-    my $x = int(rand($size_cold));
+    my $x = int(rand(scalar @cold));
     print $cold[$x], "\n";
     } elsif (($dif > 10) && ($dif <= 30)){
-    my $x = int(rand($size_hot));
+    my $x = int(rand(scalar @hot));
     print $hot[$x], "\n";
     } elsif (($dif > 0) && ($dif <= 10)){
-    my $x = int(rand($size_v_hot));
+    my $x = int(rand(scalar @very_hot));
     print $very_hot[$x], "\n";
     } else {
     print "Ты Просто Красавец=) Просрал столько времени, но угадал число $rnum \n";
