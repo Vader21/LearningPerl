@@ -1,9 +1,11 @@
 <body style="background-image: url(/images/4d939be84a5e8.gif);">
 <div style="border-style:solid; border-width:1px;">[% output %]</div>
 <div style="border-style:solid; border-width:1px;">rnum:[% rnum %]</div>
+<div style="border-style:solid; border-width:1px;">[% time_start %]</div>
 <form method="POST" action="/">
-<input type="hidden" name="output" value="[% output %]">
+<input type="hidden" name="output" value="[% output | html %]">
 <input type="hidden" name="rnum" value="[% rnum %]">
+<input type="hidden" name="time_start" value="[% time_start %]">
 <input type="text" name="guess_number"><input type="submit" value="GO!">
 </form>
 </body>

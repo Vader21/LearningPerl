@@ -5,11 +5,10 @@ use common::sense;
 our $VERSION = '0.1';
 
 get '/' => sub {
-    template 'index', { rnum => int(rand(100)), output => "Угадай ка ты число от 1 до 100 и получишь бАльшую кАнфету. <br>\n" };
+    template 'index', { rnum => int(rand(100)), output => "Угадай ка ты число от 1 до 100 и получишь бАльшую кАнфету. <br>\n", time_start => time };
 };
 
 post '/' => sub {
-    my $time_start = (time);
     my @very_cold = (
     "[Очень Холодно]Ты убил Кенни.",
     "[Очень Холодно]Не трать мое время, неудачник.",
@@ -59,13 +58,11 @@ post '/' => sub {
     );
     
 
-#    print "$rnum \n";
-#    print "Угадай ка ты число от 1 до 100 и получишь бАльшую кАнфету. \n";
     my $dif = 1;
+    my $time_start = params->{time_start};
     my $line = params->{guess_number};
     my $output = params->{output};
     my $rnum = params->{rnum};
-
     if (!($line =~ m/\D/) && $line <=100 && $line >=1) {
     $dif = abs($line - $rnum);
     if (($dif > 50) && ($dif < 100)) {
@@ -81,13 +78,16 @@ post '/' => sub {
 	my $x = int(rand(scalar @very_hot));
 	$output .= $very_hot[$x] . "<br>\n";
 	} else {
-#	print "Ты Просто Красавец=) Просрал столько времени, но угадал число $rnum \n";
+	$output .= "Ты Просто Красавец=) Просрал столько времени, но угадал число $rnum <br>\n"
+	. "Ты просрал " . ((time) - $time_start) .  " секунд(ы) <br>\n"
+	. "<img src=\"/images/Cat_Congratulations.gif\"> <br>"
+	. "<a href=http://localhost:3000/>NEW GAME</a>";
 	};
     } else {
-#	print "Насяльника, Равшана мана не понимать. Введи мана другуя буква \n"
+	$output .=  "Насяльника, Равшана мана не понимать. Введи мана другуя буква <br>\n"
 	};
 #    print "Ты просрал ", ((time) - $time_start),  " секунд(ы) \n";
-    template 'index', { output => $output, rnum => $rnum };
+    template 'index', { output => $output, rnum => $rnum, time_start => $time_start };
 };
 
 true;
